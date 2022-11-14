@@ -1,33 +1,59 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {Gradient} from "../../components/Gradient";
+import { StatusBar } from "expo-status-bar";
+import { TouchableOpacity } from "react-native";
+import { Gradient } from "../../components/Gradient";
+import logo from "../../../assets/logo.png";
+import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import {
+  Container,
+  Logo,
+  TextButton,
+  StButton,
+  Title,
+  InputLogin,
+  InputPassword,
+  Recover,
+} from "./styles";
 
-export default function App() {
+export default function Login() {
+  const [user, setUser] = useState({
+    login: "",
+    password: "",
+  });
+
+  const navigation = useNavigation();
+
+  function screenRecuperacaoSenha() {
+    navigation.navigate("RecuperacaoSenha");
+  }
+
   return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Login</Text>
-      <Text>Digite seu login</Text>
-      <Text>Digite sua senha</Text>
-      <Text>Esqueceu a senha? Clique aqui</Text>
-      <Text>ENTRAR</Text>
-      <Text>Não possui cadastro? Cadastre-se!</Text>
+    <Container>
+      <Gradient />
+      <Logo source={logo} />
+      <Title>Login</Title>
+      <InputLogin
+        value={user.login}
+        onChangeText={setUser}
+        placeholder={"Digite seu login"}
+        placeholderTextColor={"gray"}
+      />
+      <InputPassword
+        value={user.password}
+        onChangeText={setUser}
+        placeholder={"Digite sua senha"}
+        placeholderTextColor={"gray"}
+      />
+      <TouchableOpacity onPress={screenRecuperacaoSenha}>
+        <Recover>Esqueceu a senha? Clique aqui</Recover>
+      </TouchableOpacity>
+      <StButton>
+        <TextButton>ENTRAR</TextButton>
+      </StButton>
+      <TouchableOpacity>
+        <Recover>Não possui cadastro? Cadastre-se!</Recover>
+      </TouchableOpacity>
       <StatusBar style="auto" />
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;
