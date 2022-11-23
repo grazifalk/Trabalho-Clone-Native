@@ -1,35 +1,70 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {Gradient} from "../../components/Gradient";
-
+import { StatusBar } from "expo-status-bar";
+import { Gradient } from "../../components/Gradient";
+import logo from "../../../assets/logo.png";
+import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import {
+  Container,
+  Logo,
+  Title,
+  InputNome,
+  InputCPF,
+  InputDate,
+  InputPassword,
+  StButton,
+  TextButton
+} from "./styles";
 export default function Cadastro() {
+  const [user, setUser] = useState({
+    login: "",
+    password: "",
+  });
+
+  const navigation = useNavigation();
+
+  function screenConfirmacaoCadastro() {
+    navigation.navigate("ConfirmacaoCadastro");
+  }
+
   return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Cadastro</Text>
-      <Text>Nome</Text>
-      <Text>CPF</Text>
-      <Text>Data de Nascimento</Text>
-      <Text>Senha</Text>
-      <Text>Confirmar Senha</Text>
-      <Text>CADASTRAR</Text>
+    <Container>
+      <Gradient />
+      <Logo source={logo} />
+      <Title>Cadastro</Title>
+      <InputNome
+        value={user.nome}
+        onChangeText={setUser}
+        placeholder={"Nome"}
+        placeholderTextColor={"gray"}
+      />
+      <InputCPF
+        value={user.cpf}
+        onChangeText={setUser}
+        placeholder={"CPF"}
+        placeholderTextColor={"gray"}
+      />
+      <InputDate
+        value={user.date}
+        onChangeText={setUser}
+        placeholder={"Data de Nascimento"}
+        placeholderTextColor={"gray"}
+      />
+      <InputPassword
+        value={user.password}
+        onChangeText={setUser}
+        placeholder={"Senha"}
+        placeholderTextColor={"gray"}
+      />
+      <InputPassword
+        value={user.password}
+        onChangeText={setUser}
+        placeholder={"Confirmar Senha"}
+        placeholderTextColor={"gray"}
+      />
+      <StButton onPress={screenConfirmacaoCadastro}>
+        <TextButton>CADASTRAR</TextButton>
+      </StButton>
       <StatusBar style="auto" />
-      <Gradient position = "bottom"/>
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;

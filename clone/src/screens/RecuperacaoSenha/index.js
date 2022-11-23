@@ -1,21 +1,43 @@
 import {StatusBar} from "expo-status-bar";
 import { useState } from "react";
-import {Text, View} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import {Gradient} from "../../components/Gradient";
+import logo from "../../../assets/logo.png";
+import {
+  Container,
+  Logo,
+  TextButton,
+  StButton,
+  Title,
+  InputCPF,
+} from "./styles";
 
 export default function RecuperacaoSenha() {
   const [user, setUser] = useState({
-    login: "",
-    password: "",
+    cpf: "",
   })
 
+  const navigation = useNavigation();
+
+  function screenRecuperacaoSenhaCriar() {
+    navigation.navigate("RecuperacaoSenhaCriar");
+  }
+
   return (
-    <View>
+    <Container>
       <Gradient />
-      <Text>Recuperar Senha</Text>
-      <Text>Digite seu CPF</Text>
-      <Text>RECUPERAR</Text>
+      <Logo source={logo} />
+      <Title>Recuperar Senha</Title>
+      <InputCPF
+        value={user.cpf}
+        onChangeText={setUser}
+        placeholder={"Digite seu CPF"}
+        placeholderTextColor={"gray"}
+      />
+      <StButton onPress={screenRecuperacaoSenhaCriar}>
+      <TextButton>RECUPERAR</TextButton>
+      </StButton>
       <StatusBar style="auto" />
-    </View>
+      </Container>
   );
 }

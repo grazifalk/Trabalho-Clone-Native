@@ -1,31 +1,50 @@
 import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import {Gradient} from "../../components/Gradient";
+import logo from "../../../assets/logo.png";
+import { useState } from "react";
+import {
+  Container,
+  Logo,
+  TextButton,
+  StButton,
+  Title,
+  InputPassword,
+} from "./styles";
 
 export default function RecuperacaoSenhaCriar() {
+  const [user, setUser] = useState({
+    login: "",
+    password: "",
+  });
+
+  const navigation = useNavigation();
+
+  function screenConfirmacaoAlteracaoSenha() {
+    navigation.navigate("ConfirmacaoAlteracaoSenha");
+  }
+
   return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Criar Senha</Text>
-      <Text>Digite sua nova senha</Text>
-      <Text>Repita sua nova senha</Text>
-      <Text>ALTERAR</Text>
+    <Container>
+      <Gradient />
+      <Logo source={logo} />
+      <Title>Criar Senha</Title>
+      <InputPassword
+        value={user.password}
+        onChangeText={setUser}
+        placeholder={"Digite sua nova senha"}
+        placeholderTextColor={"gray"}
+      />
+      <InputPassword
+        value={user.password}
+        onChangeText={setUser}
+        placeholder={"Repita sua nova senha"}
+        placeholderTextColor={"gray"}
+      />
+      <StButton onPress={screenConfirmacaoAlteracaoSenha}>
+      <TextButton>ALTERAR</TextButton>
+      </StButton>
       <StatusBar style="auto" />
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;

@@ -36,39 +36,7 @@ export const StButton = styled.TouchableOpacity`
 
 export const Title = styled.Text`
       color: #120A8F;
-      font-weight: 800;
-      font-size: 18px;
+      font-weight: bold;
+      font-size: 15px;
       margin-top: 42px;
-`;
-
-export const InputLogin = styled.TextInput`
-      height: 31px;
-      width: 188px;
-      border: 2px solid #00FFFF;
-      border-radius: 5px;
-      padding-left: 5px;
-      font-family: sans-serif;
-      margin-top: 20px;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-`;
-
-export const InputPassword = styled.TextInput`
-      height: 31px;
-      width: 188px;
-      border: 2px solid #00FFFF;
-      border-radius: 5px;
-      padding-left: 5px;
-      font-family: sans-serif;
-      margin-top: 20px;
-      margin-bottom: 5px;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-`;
-
-export const Recover = styled.Text`
-      color: #120A8F;
-      font-family: sans-serif;
-      font-size: 10px;
-      line-height: 12px;
-      font-weight: 700;
-      margin-top: 5px;
 `;

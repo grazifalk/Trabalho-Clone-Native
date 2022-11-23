@@ -27,6 +27,10 @@ export default function Login() {
     navigation.navigate("RecuperacaoSenha");
   }
 
+  function screenCadastro() {
+    navigation.navigate("Cadastro");
+  }
+
   return (
     <Container>
       <Gradient />
@@ -45,12 +49,12 @@ export default function Login() {
         placeholderTextColor={"gray"}
       />
       <TouchableOpacity onPress={screenRecuperacaoSenha}>
-        <Recover>Esqueceu a senha? Clique aqui</Recover>
+        <Recover>Esqueceu a senha? Clique aqui!</Recover>
       </TouchableOpacity>
       <StButton>
         <TextButton>ENTRAR</TextButton>
       </StButton>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={screenCadastro}>
         <Recover>Não possui cadastro? Cadastre-se!</Recover>
       </TouchableOpacity>
       <StatusBar style="auto" />

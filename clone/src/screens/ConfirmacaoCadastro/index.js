@@ -1,29 +1,25 @@
 import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import {Gradient} from "../../components/Gradient";
+import logo from "../../../assets/logo.png";
+import { Container, Logo, Title, StButton, TextButton } from "./styles";
 
 export default function ConfirmacaoCadastro() {
+  const navigation = useNavigation();
+
+  function screenLogin() {
+    navigation.navigate("Login");
+  }
+
   return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Usupario cadastrado com sucesso!</Text>
-      <Text>LOGIN</Text>
+    <Container>
+      <Gradient />
+      <Logo source={logo} />
+      <Title >Usuário cadastrado com sucesso!</Title>
+      <StButton onPress={screenLogin}>
+      <TextButton>LOGIN</TextButton>
+      </StButton>
       <StatusBar style="auto" />
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;
