@@ -1,10 +1,18 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Gradient } from "../../components/Gradient";
-import { CardContainer, Container, ContainerButton, StButton, TextButton } from "./styles";
+import {
+  CardContainer,
+  Container,
+  ContainerButton,
+  StButton,
+  TextButton,
+  TextCart,
+  ViewText,
+} from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import { Feather } from '@expo/vector-icons';
 
 export const Carrinho = () => {
   const navigation = useNavigation();
@@ -21,19 +29,47 @@ export const Carrinho = () => {
       <Gradient />
       <Header title="Carrinho" />
       <CardContainer>
-        <Text>
-          Produto Quantidade Preço Unitário Total Produto 1 2 R$ 25,00 R$ 50,00
-          Produto 4 1 R$ 100,00 R$ 100,00 Produto 5 1 R$ 40,00 R$ 40,00
-        </Text>
-        <Text>Total da compra R$ 190,00</Text>
-        <Text>Data da compra 17/06/2022</Text>
+        <ViewText>
+          <TextCart>Produto</TextCart>
+          <TextCart>Quantidade</TextCart>
+          <TextCart>Preço Unitário</TextCart>
+          <TextCart>Total</TextCart>
+        </ViewText>
+        <ViewText>
+          <TextCart>Produto 1</TextCart>
+          <TextCart><Feather name="minus-circle" size={12} color="#120a8f" /> 2 <Feather name="plus-circle" size={12} color="#120a8f" /></TextCart>
+          <TextCart>R$ 25,00</TextCart>
+          <TextCart>R$ 50,00</TextCart>
+        </ViewText>
+        <ViewText>
+          <TextCart>Produto 4</TextCart>
+          <TextCart><Feather name="minus-circle" size={12} color="#120a8f" /> 1 <Feather name="plus-circle" size={12} color="#120a8f" /></TextCart>
+          <TextCart>R$ 100,00</TextCart>
+          <TextCart>R$ 100,00</TextCart>
+        </ViewText>
+        <ViewText>
+          <TextCart>Produto 5</TextCart>
+          <TextCart><Feather name="minus-circle" size={12} color="#120a8f" /> 1 <Feather name="plus-circle" size={12} color="#120a8f" /></TextCart>
+          <TextCart>R$ 40,00</TextCart>
+          <TextCart>R$ 40,00</TextCart>
+        </ViewText>
+        <br/>
+        <br/>
+        <ViewText>
+          <TextCart>Total da compra</TextCart>
+          <TextCart>R$ 190,00</TextCart>
+        </ViewText>
+        <ViewText>
+          <TextCart>Data da compra</TextCart>
+          <TextCart>17/06/2022</TextCart>
+        </ViewText>
         <ContainerButton>
-        <StButton onPress={screenProdutos}>
-          <TextButton>ADICIONAR MAIS ITENS</TextButton>
-        </StButton>
-        <StButton onPress={screenConfirmacaoCompra}>
-          <TextButton>FECHAR PEDIDO</TextButton>
-        </StButton>
+          <StButton onPress={screenProdutos}>
+            <TextButton>ADICIONAR MAIS ITENS</TextButton>
+          </StButton>
+          <StButton onPress={screenConfirmacaoCompra}>
+            <TextButton>FECHAR PEDIDO</TextButton>
+          </StButton>
         </ContainerButton>
       </CardContainer>
       <StatusBar style="auto" />

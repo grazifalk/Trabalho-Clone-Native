@@ -8,13 +8,6 @@ export const Container = styled.View`
   justify-content: center;
 `;
 
-export const Title = styled.Text`
-  color: #120a8f;
-  font-weight: bold;
-  font-size: 15px;
-  margin-top: 42px;
-`;
-
 export const CardContainer = styled.View`
   box-sizing: border-box;
   position: absolute;
@@ -26,14 +19,30 @@ export const CardContainer = styled.View`
   border-radius: 5px;
 `;
 
-export const TextButton = styled.Text`
-  font-family: sans-serif;
+export const ViewText = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const TextCart = styled.Text`
+  font-size: 10px;
+  color: ${colors.secondary};
+  font-weight: 800;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+
+export const ContainerButton = styled.View`
+  align-items: center;
   text-align: center;
-  color: #120a8f;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
   align-self: center;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 15px;
+  margin-top: 40px;
 `;
 
 export const StButton = styled.TouchableOpacity`
@@ -49,51 +58,13 @@ export const StButton = styled.TouchableOpacity`
   justify-content: center;
 `;
 
-export const ContainerButton = styled.View`
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-    align-self: center;
-    /* margin-top: 150px; */
-`;
-
-
-
-export const BottomCard = styled.View`
-    width: 100%;
-    height: 50px;
-    bottom: -40;
-`;
-
-export const TitleCard = styled.Text`
-    font-size: 12px;
-    color: ${colors.secondary};
-    font-weight: 800;
-    padding-bottom: 15px;
-    `;
-
-export const TextCard = styled.Text`
-    font-size: 12px;
-    color: ${colors.secondary};
-    font-weight: 800;
-    padding-bottom: 5px;
-`;
-
-export const ColumnCard = styled.View`
-    /* width: 90px; */
-    height: 100px;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    margin: 5px;
-    `;
-
-export const ColumnCard2 = styled.View`
-    width: 90%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-self: center;
+export const TextButton = styled.Text`
+  font-family: sans-serif;
+  text-align: center;
+  color: #120a8f;
+  align-self: center;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 11px;
+  padding-top: 2px;
 `;
