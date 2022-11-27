@@ -8,8 +8,8 @@ export const Footer = () => {
 
     const navigation = useNavigation();
 
-    function openHome() {
-        navigation.navigate("Home");
+    function openInicial() {
+        navigation.navigate("Inicial");
     }
 
     function openProdutos() {
@@ -26,7 +26,7 @@ export const Footer = () => {
 
     return (
         <Container>
-            <TouchableOpacity onPress={openHome}>
+            <TouchableOpacity onPress={openInicial}>
             <MaterialCommunityIcons
           name="home-outline"
           size={40}

@@ -68,12 +68,12 @@ export const Produtos = () => {
 
     const navigation = useNavigation();
 
-    function openScreen() {
+    function screenCadastroProduto() {
         navigation.navigate("CadastroProduto")
     }
 
-    function openScreen2() {
-        navigation.navigate("EdicaoProduto")
+    function screenAlterarProduto() {
+        navigation.navigate("AlterarProduto")
     }
 
     const Item = ({imagem, nome, preco, estoque, quantidade, favorito}) => (
@@ -101,7 +101,7 @@ export const Produtos = () => {
             </Card>
             <IconContainer>
                 <MaterialIcons name="delete-outline" size={20} color="red" />    
-                <TouchableOpacity onPress={openScreen2}>
+                <TouchableOpacity onPress={screenAlterarProduto}>
                     <AntDesign name="edit" size={20} color={colors.secondary} />
                 </TouchableOpacity>
             </IconContainer>
@@ -123,7 +123,7 @@ export const Produtos = () => {
         <Container>
             <Gradient />
             <Header title="Produtos" />
-            <PlusButton onPress={openScreen}>
+            <PlusButton onPress={screenCadastroProduto}>
                 <AntDesign name="plus" size={24} color={colors.secondary} />
             </PlusButton>
             <CardsContainer>
