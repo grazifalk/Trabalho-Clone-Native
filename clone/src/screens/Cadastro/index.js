@@ -14,7 +14,7 @@ import {
   StButton,
   TextButton
 } from "./styles";
-export default function Cadastro() {
+export const Cadastro = () => {
   const [user, setUser] = useState({
     login: "",
     password: "",

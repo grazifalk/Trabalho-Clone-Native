@@ -3,8 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import {Gradient} from "../../components/Gradient";
 import logo from "../../../assets/logo.png";
 import { Container, Logo, Title, StButton, TextButton } from "./styles";
-
-export default function ConfirmacaoCompra() {
+export const ConfirmacaoCompra = () => {
   const navigation = useNavigation();
 
   function screenLogin() {

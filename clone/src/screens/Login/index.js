@@ -15,7 +15,7 @@ import {
   Recover,
 } from "./styles";
 
-export default function Login() {
+export const Login = () => {
   const [user, setUser] = useState({
     login: "",
     password: "",

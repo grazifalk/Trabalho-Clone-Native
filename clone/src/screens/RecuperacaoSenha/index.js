@@ -12,7 +12,7 @@ import {
   InputCPF,
 } from "./styles";
 
-export default function RecuperacaoSenha() {
+export const RecuperacaoSenha = () => {
   const [user, setUser] = useState({
     cpf: "",
   })

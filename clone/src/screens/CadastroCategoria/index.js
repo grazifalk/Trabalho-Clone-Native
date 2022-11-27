@@ -2,7 +2,7 @@ import {StatusBar} from "expo-status-bar";
 import {StyleSheet, Text, View} from "react-native";
 import {Gradient} from "../../components/Gradient";
 
-export default function CadastroCategoria() {
+export const CadastroCategoria = () => {
   return (
     <View style={styles.container}>
       <Gradient position = "top"/>

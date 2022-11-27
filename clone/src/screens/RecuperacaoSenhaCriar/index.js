@@ -12,7 +12,7 @@ import {
   InputPassword,
 } from "./styles";
 
-export default function RecuperacaoSenhaCriar() {
+export const RecuperacaoSenhaCriar = () =>{
   const [user, setUser] = useState({
     login: "",
     password: "",

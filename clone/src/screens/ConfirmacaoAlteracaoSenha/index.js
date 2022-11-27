@@ -4,7 +4,7 @@ import {Gradient} from "../../components/Gradient";
 import logo from "../../../assets/logo.png";
 import { Container, Logo, Title, StButton, TextButton } from "./styles";
 
-export default function ConfirmacaoAlteracaoSenha() {
+export const ConfirmacaoAlteracaoSenha = () => {
   const navigation = useNavigation();
 
   function screenLogin() {
