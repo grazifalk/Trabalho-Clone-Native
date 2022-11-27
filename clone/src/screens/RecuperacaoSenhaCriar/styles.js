@@ -39,6 +39,7 @@ export const Title = styled.Text`
       font-weight: bold;
       font-size: 15px;
       margin-top: 42px;
+      margin-bottom: 20px;
 `;
 
 export const InputPassword = styled.TextInput`

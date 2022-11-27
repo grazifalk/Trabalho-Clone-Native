@@ -11,9 +11,9 @@ import {
   StButton,
   Title,
   InputLogin,
-  InputPassword,
   Recover,
 } from "./styles";
+import { InputSenha } from "../../components/InputSenha";
 
 export const Login = () => {
   const [user, setUser] = useState({
@@ -42,7 +42,8 @@ export const Login = () => {
         placeholder={"Digite seu login"}
         placeholderTextColor={"gray"}
       />
-      <InputPassword
+      <br/>
+      <InputSenha
         value={user.password}
         onChangeText={setUser}
         placeholder={"Digite sua senha"}

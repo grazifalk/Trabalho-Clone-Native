@@ -3,6 +3,8 @@ import { Gradient } from "../../components/Gradient";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Container, InputStyle, StButton, TextButton, TextImagem } from "./styles";
+import { Feather } from '@expo/vector-icons';
+
 
 
 export const AlterarCategoria = () => {
@@ -12,7 +14,7 @@ export const AlterarCategoria = () => {
       <Header title="Alterar Categoria" />
       <InputStyle placeholder={"Tec1"} placeholderTextColor={"#120a8f"} />
       <InputStyle placeholder={"imagem5.png"} placeholderTextColor={"#120a8f"} />
-      <TextImagem>Selecionar imagem</TextImagem>
+      <TextImagem>Selecionar imagem <Feather name="upload" size={14} color="black" /></TextImagem>
       <StButton>
         <TextButton>ALTERAR</TextButton>
       </StButton>

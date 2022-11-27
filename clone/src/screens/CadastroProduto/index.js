@@ -9,6 +9,7 @@ import {
 } from "./styles";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { Feather } from '@expo/vector-icons';
 
 export const CadastroProduto = () => {
   return (
@@ -23,7 +24,7 @@ export const CadastroProduto = () => {
       />
       <InputStyle placeholder={"Imagem"} placeholderTextColor={"gray"} />
 
-      <TextImagem>Selecionar imagem</TextImagem>
+      <TextImagem>Selecionar imagem <Feather name="upload" size={14} color="black" /></TextImagem>
       <StButton>
         <TextButton>CADASTRAR</TextButton>
       </StButton>

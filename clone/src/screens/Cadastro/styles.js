@@ -70,6 +70,7 @@ export const InputDate = styled.TextInput`
   font-family: sans-serif;
   margin-top: 20px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
 `;
 
 export const InputPassword = styled.TextInput`

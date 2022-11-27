@@ -4,6 +4,7 @@ import { Container, InputImagem, InputNome, StButton, TextButton, TextImagem } f
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { useState } from "react";
+import { Feather } from '@expo/vector-icons';
 
 export const CadastroCategoria = () => {
   const [categoria, setCategoria] = useState({
@@ -28,7 +29,7 @@ export const CadastroCategoria = () => {
         placeholderTextColor={"gray"}
       />
 
-      <TextImagem>Selecionar imagem</TextImagem>
+      <TextImagem>Selecionar imagem <Feather name="upload" size={14} color="black" /></TextImagem>
       <StButton>
         <TextButton>CADASTRAR</TextButton>
       </StButton>

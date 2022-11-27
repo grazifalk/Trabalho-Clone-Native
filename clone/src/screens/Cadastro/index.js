@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import { Gradient } from "../../components/Gradient";
-import logo from "../../../assets/logo.png";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { HeaderCadastro } from "../../components/HeaderCadastro";
@@ -9,10 +8,10 @@ import {
   InputNome,
   InputCPF,
   InputDate,
-  InputPassword,
   StButton,
   TextButton,
 } from "./styles";
+import { InputSenha } from "../../components/InputSenha";
 export const Cadastro = () => {
   const [user, setUser] = useState({
     login: "",
@@ -47,13 +46,14 @@ export const Cadastro = () => {
         placeholder={"Data de Nascimento"}
         placeholderTextColor={"gray"}
       />
-      <InputPassword
+      <InputSenha
         value={user.password}
         onChangeText={setUser}
         placeholder={"Senha"}
         placeholderTextColor={"gray"}
       />
-      <InputPassword
+      <br/>
+      <InputSenha
         value={user.password}
         onChangeText={setUser}
         placeholder={"Confirmar Senha"}

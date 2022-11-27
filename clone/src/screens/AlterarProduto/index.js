@@ -2,6 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import { Gradient } from "../../components/Gradient";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { Feather } from '@expo/vector-icons';
+
 import {
   Container,
   InputStyle,
@@ -22,7 +24,7 @@ export const AlterarProduto = () => {
         placeholder={"Imagem1.png"}
         placeholderTextColor={"#120a8f"}
       />
-      <TextImagem>Selecionar imagem</TextImagem>
+      <TextImagem>Selecionar imagem <Feather name="upload" size={14} color="black" /></TextImagem>
       <StButton>
         <TextButton>ALTERAR</TextButton>
       </StButton>

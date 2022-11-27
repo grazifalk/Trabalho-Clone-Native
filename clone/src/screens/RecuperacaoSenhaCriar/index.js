@@ -10,8 +10,8 @@ import {
   TextButton,
   StButton,
   Title,
-  InputPassword,
 } from "./styles";
+import { InputSenha } from "../../components/InputSenha";
 
 export const RecuperacaoSenhaCriar = () => {
   const [user, setUser] = useState({
@@ -31,13 +31,14 @@ export const RecuperacaoSenhaCriar = () => {
       <Header />
       <Logo source={logo} />
       <Title>Criar Senha</Title>
-      <InputPassword
+      <InputSenha
         value={user.password}
         onChangeText={setUser}
         placeholder={"Digite sua nova senha"}
         placeholderTextColor={"gray"}
       />
-      <InputPassword
+      <br/>
+      <InputSenha
         value={user.password}
         onChangeText={setUser}
         placeholder={"Repita sua nova senha"}
