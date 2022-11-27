@@ -1,33 +1,35 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {Gradient} from "../../components/Gradient";
+import { StatusBar } from "expo-status-bar";
+import { Gradient } from "../../components/Gradient";
+import {
+  Container,
+  InputStyle,
+  StButton,
+  TextButton,
+  TextImagem,
+} from "./styles";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+
 export const CadastroProduto = () => {
   return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Cadastro de Produto</Text>
-      <Text>Nome</Text>
-      <Text>Preço R$</Text>
-      <Text>Quantidade em estoque</Text>
-      <Text>Imagem</Text>
-      <Text>Selecionar imagem</Text>
-      <Text>CADASTRAR</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <Container>
+      <Gradient />
+      <Header title="Cadastro de Produto" />
+      <InputStyle placeholder={"Nome"} placeholderTextColor={"gray"} />
+      <InputStyle placeholder={"Preço R$"} placeholderTextColor={"gray"} />
+      <InputStyle
+        placeholder={"Quantidade em estoque"}
+        placeholderTextColor={"gray"}
+      />
+      <InputStyle placeholder={"Imagem"} placeholderTextColor={"gray"} />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;
+      <TextImagem>Selecionar imagem</TextImagem>
+      <StButton>
+        <TextButton>CADASTRAR</TextButton>
+      </StButton>
+      <Footer />
+
+      <StatusBar style="auto" />
+    </Container>
+  );
+};
