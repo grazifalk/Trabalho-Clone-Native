@@ -1,32 +1,39 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {Gradient} from "../../components/Gradient";
+import { StatusBar } from "expo-status-bar";
+import { Gradient } from "../../components/Gradient";
+import { Container, InputImagem, InputNome, StButton, TextButton, TextImagem } from "./styles";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { useState } from "react";
 
 export const CadastroCategoria = () => {
-  return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Cadastro de Categoria</Text>
-      <Text>Nome</Text>
-      <Text>Imagem</Text>
-      <Text>Selecionar imagem</Text>
-      <Text>CADASTRAR</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [categoria, setCategoria] = useState({
+    nome: "",
+    imagem: "",
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;
+  return (
+    <Container>
+      <Gradient />
+      <Header title="Cadastro de Categoria" />
+      <InputNome
+        value={categoria.nome}
+        onChangeText={setCategoria}
+        placeholder={"Nome"}
+        placeholderTextColor={"gray"}
+      />
+      <InputImagem
+        value={categoria.imagem}
+        onChangeText={setCategoria}
+        placeholder={"Imagem"}
+        placeholderTextColor={"gray"}
+      />
+
+      <TextImagem>Selecionar imagem</TextImagem>
+      <StButton>
+        <TextButton>CADASTRAR</TextButton>
+      </StButton>
+      <Footer />
+      <StatusBar style="auto" />
+    </Container>
+  );
+};

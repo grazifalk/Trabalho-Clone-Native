@@ -24,7 +24,7 @@ export function StackRoutes() {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="Login"
+      initialRouteName="CadastroCategoria"
     >
       <Screen name="Login" component={Login} />
       <Screen name="AlterarCategoria" component={AlterarCategoria} />
