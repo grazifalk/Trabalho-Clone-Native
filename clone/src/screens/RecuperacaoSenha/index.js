@@ -11,6 +11,7 @@ import {
   Title,
   InputCPF,
 } from "./styles";
+import {Header} from "../../components/Header"
 
 export const RecuperacaoSenha = () => {
   const [user, setUser] = useState({
@@ -26,6 +27,7 @@ export const RecuperacaoSenha = () => {
   return (
     <Container>
       <Gradient />
+      <Header />
       <Logo source={logo} />
       <Title>Recuperar Senha</Title>
       <InputCPF

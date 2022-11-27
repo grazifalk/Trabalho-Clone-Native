@@ -1,8 +1,9 @@
-import {StatusBar} from "expo-status-bar";
+import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
-import {Gradient} from "../../components/Gradient";
+import { Gradient } from "../../components/Gradient";
 import logo from "../../../assets/logo.png";
 import { useState } from "react";
+import { Header } from "../../components/Header";
 import {
   Container,
   Logo,
@@ -12,7 +13,7 @@ import {
   InputPassword,
 } from "./styles";
 
-export const RecuperacaoSenhaCriar = () =>{
+export const RecuperacaoSenhaCriar = () => {
   const [user, setUser] = useState({
     login: "",
     password: "",
@@ -27,6 +28,7 @@ export const RecuperacaoSenhaCriar = () =>{
   return (
     <Container>
       <Gradient />
+      <Header />
       <Logo source={logo} />
       <Title>Criar Senha</Title>
       <InputPassword
@@ -42,9 +44,9 @@ export const RecuperacaoSenhaCriar = () =>{
         placeholderTextColor={"gray"}
       />
       <StButton onPress={screenConfirmacaoAlteracaoSenha}>
-      <TextButton>ALTERAR</TextButton>
+        <TextButton>ALTERAR</TextButton>
       </StButton>
       <StatusBar style="auto" />
     </Container>
   );
-}
+};

@@ -3,16 +3,15 @@ import { Gradient } from "../../components/Gradient";
 import logo from "../../../assets/logo.png";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { Header } from "../../components/Header";
 import {
   Container,
-  Logo,
-  Title,
   InputNome,
   InputCPF,
   InputDate,
   InputPassword,
   StButton,
-  TextButton
+  TextButton,
 } from "./styles";
 export const Cadastro = () => {
   const [user, setUser] = useState({
@@ -29,8 +28,7 @@ export const Cadastro = () => {
   return (
     <Container>
       <Gradient />
-      <Logo source={logo} />
-      <Title>Cadastro</Title>
+      <Header title="Cadastro" /> 
       <InputNome
         value={user.nome}
         onChangeText={setUser}
@@ -67,4 +65,4 @@ export const Cadastro = () => {
       <StatusBar style="auto" />
     </Container>
   );
-}
+};

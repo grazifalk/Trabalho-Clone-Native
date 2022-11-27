@@ -1,33 +1,69 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {Gradient} from "../../components/Gradient";
+import { StatusBar } from "expo-status-bar";
+import { Gradient } from "../../components/Gradient";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { AntDesign } from "@expo/vector-icons";
+import dois from "../../../assets/2.png";
+import cinco from "../../../assets/5.jpg";
+import seis from "../../../assets/6.jpg";
+import {
+  Card,
+  Container,
+  ContainerIcon,
+  ImagemCard,
+  Title,
+  ViewCard,
+  ViewFavorito,
+} from "./styles";
 
 export const Favoritos = () => {
   return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Favoritos</Text>
-      <Text>Produto 2 Preço R$ 50,00 1 unidade em estoque</Text>
-      <Text>Produto 5 Preço R$ 40,00 20 unidades em estoque</Text>
-      <Text>Produto 6 Preço R$ 70,00 8 unidades em estoque</Text>
-      <Text>+</Text>
-      <Text>Produto 2 Preço R$ 50,00 1 unidade em estoque</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <Container>
+      <Gradient />
+      <Header title="Favoritos" />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;
+      <ViewCard>
+        <Card>
+          <ImagemCard source={dois} />
+          <ViewFavorito>
+            <Title>Produto 2</Title>
+            <Title>Preco R$ 50,00</Title>
+            <Title>1 unidade em estoque</Title>
+          </ViewFavorito>
+          <ContainerIcon>
+            <AntDesign name="close" size={24} color="#120a8f" />
+          </ContainerIcon>
+        </Card>
+      </ViewCard>
+      <ViewCard>
+        <Card>
+          <ImagemCard source={cinco} />
+          <ViewFavorito>
+            <Title>Produto 5</Title>
+            <Title>Preco R$ 40,00</Title>
+            <Title>20 unidades em estoque</Title>
+          </ViewFavorito>
+          <ContainerIcon>
+            <AntDesign name="close" size={24} color="#120a8f" />
+          </ContainerIcon>
+        </Card>
+      </ViewCard>
+      <ViewCard>
+        <Card>
+          <ImagemCard source={seis} />
+          <ViewFavorito>
+            <Title>Produto 6</Title>
+            <Title>Preco R$ 70,00</Title>
+            <Title>8 unidades em estoque</Title>
+          </ViewFavorito>
+          <ContainerIcon>
+            <AntDesign name="close" size={24} color="#120a8f" />
+          </ContainerIcon>
+        </Card>
+      </ViewCard>
+
+      <Footer />
+      <StatusBar style="auto" />
+    </Container>
+  );
+};
