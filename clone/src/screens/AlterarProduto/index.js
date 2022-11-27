@@ -1,34 +1,33 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {Gradient} from "../../components/Gradient";
+import { StatusBar } from "expo-status-bar";
+import { Gradient } from "../../components/Gradient";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import {
+  Container,
+  InputStyle,
+  StButton,
+  TextButton,
+  TextImagem,
+} from "./styles";
 
 export const AlterarProduto = () => {
   return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Alterar Produto</Text>
-      <Text>Produto 1</Text>
-      <Text>25,00</Text>
-      <Text>10</Text>
-      <Text>Imagem1.png</Text>
-      <Text>Selecionar imagem</Text>
-      <Text>ALTERAR</Text>
+    <Container>
+      <Gradient />
+      <Header title="Alterar Produto" />
+      <InputStyle placeholder={"Produto 1"} placeholderTextColor={"#120a8f"} />
+      <InputStyle placeholder={"25,00"} placeholderTextColor={"#120a8f"} />
+      <InputStyle placeholder={"10"} placeholderTextColor={"#120a8f"} />
+      <InputStyle
+        placeholder={"Imagem1.png"}
+        placeholderTextColor={"#120a8f"}
+      />
+      <TextImagem>Selecionar imagem</TextImagem>
+      <StButton>
+        <TextButton>ALTERAR</TextButton>
+      </StButton>
+      <Footer />
       <StatusBar style="auto" />
-    </View>
+    </Container>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;
+};

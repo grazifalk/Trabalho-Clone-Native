@@ -60,4 +60,4 @@ export const Login = () => {
       <StatusBar style="auto" />
     </Container>
   );
-}
+};
