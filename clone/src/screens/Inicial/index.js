@@ -1,40 +1,112 @@
-import {StatusBar} from "expo-status-bar";
-import {StyleSheet, Text, View} from "react-native";
-import {Gradient} from "../../components/Gradient";
+import { StatusBar } from "expo-status-bar";
+import { Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Gradient } from "../../components/Gradient";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { Entypo, SimpleLineIcons, AntDesign } from "@expo/vector-icons";
+import {
+  CardCategory,
+  CenterImage,
+  Container,
+  ContainerImage,
+  CriadoresImage,
+  Descricao,
+  SmallImage,
+  Title,
+  TitleCard,
+  TitleCardCenter,
+  TitleCardSmall,
+  TitleCriadores,
+  ViewCategory,
+  ViewCriadores,
+  ViewIcons,
+  ViewTitleCard,
+  ViewTitleCriadores,
+} from "./styles";
+import um from "../../../assets/1.jpg";
+import cinco from "../../../assets/5.jpg";
+import tres from "../../../assets/3.jpg";
+import alex from "../../../assets/alex.png";
+import beatriz from "../../../assets/beatriz.png";
+import carlos from "../../../assets/carlos.png";
+import alie from "../../../assets/alie.png";
 
 export const Inicial = () => {
-  return (
-    <View style={styles.container}>
-      <Gradient position = "top"/>
-      <Text style={styles.title}>Marketplace</Text>
-      <Text>Sobre nós...</Text>
-      <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
-      <Text>Categorias</Text>
-      <Text>Tec3</Text>
-      <Text>Tec1</Text>
-      <Text>Tec2</Text>
-      <Text>Criadores</Text>
-      <Text>Alex</Text>
-      <Text>Beatriz</Text>
-      <Text>Carlos</Text>
-      <Text>Alie</Text>
-      <StatusBar style="auto" />
-      <Gradient position = "bottom"/>
-    </View>
-  );
-}
+  const navigation = useNavigation();
+  const screenCadastroCategoria = () => {
+    navigation.navigate("CadastroCategoria");
+  };
+  const screenProdutos = () => {
+    navigation.navigate("Produtos");
+  };
+  const screenAlterarCategoria = () => {
+    navigation.navigate("AlterarCategoria");
+  };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    color: "#120A8F",
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-});
-//background: #120A8F;
+  return (
+    <Container>
+      <Gradient />
+      <Header title="Marketplace" />
+      <Title>Sobre nós...</Title>
+      <Descricao>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's unchanged. It was
+        popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software
+        like Aldus PageMaker including versions of Lorem Ipsum.
+      </Descricao>
+      <ViewCategory>
+        <Title>
+          Categorias{" "}
+          <TouchableOpacity onPress={screenCadastroCategoria}>
+            <Entypo name="plus" size={20} color="#120a8f" />
+          </TouchableOpacity>
+        </Title>
+        <ViewIcons>
+          <TouchableOpacity>
+            <SimpleLineIcons name="trash" size={18} color="#ff0000" />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={screenAlterarCategoria}>
+            <AntDesign name="edit" size={18} color="#00ff" />
+          </TouchableOpacity>
+        </ViewIcons>
+      </ViewCategory>
+      <CardCategory>
+        <SmallImage source={tres} />
+        <TouchableOpacity onPress={screenProdutos}>
+          <CenterImage source={cinco} />
+        </TouchableOpacity>
+        <SmallImage source={um} />
+      </CardCategory>
+      <ViewTitleCard>
+        <TitleCardSmall>Tec3</TitleCardSmall>
+        <TitleCardCenter>Tec1</TitleCardCenter>
+        <TitleCardSmall>Tec2</TitleCardSmall>
+      </ViewTitleCard>
+      <Title>Criadores</Title>
+      <ViewCriadores>
+         
+          <CriadoresImage source={alex} />
+          <CriadoresImage source={beatriz} />
+          <CriadoresImage source={carlos} />
+          <CriadoresImage source={alie} />
+          </ViewCriadores>
+        <ViewTitleCriadores>
+
+          <TitleCriadores>Alex</TitleCriadores>
+          <TitleCriadores>Beatriz</TitleCriadores>
+          <TitleCriadores>Carlos</TitleCriadores>
+          <TitleCriadores>Alie</TitleCriadores>
+        </ViewTitleCriadores>
+
+
+
+      
+
+      <Footer />
+      <StatusBar style="auto" />
+      <Gradient position="bottom" />
+    </Container>
+  );
+};
