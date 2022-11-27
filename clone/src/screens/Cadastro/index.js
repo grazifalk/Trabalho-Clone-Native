@@ -3,7 +3,7 @@ import { Gradient } from "../../components/Gradient";
 import logo from "../../../assets/logo.png";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Header } from "../../components/Header";
+import { HeaderCadastro } from "../../components/HeaderCadastro";
 import {
   Container,
   InputNome,
@@ -28,7 +28,7 @@ export const Cadastro = () => {
   return (
     <Container>
       <Gradient />
-      <Header title="Cadastro" /> 
+      <HeaderCadastro title="Cadastro" />
       <InputNome
         value={user.nome}
         onChangeText={setUser}
